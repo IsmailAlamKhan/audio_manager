@@ -20,8 +20,8 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=D:\programming\flutter_projects\audio_manager\installers
-OutputBaseFilename=windows_audio_manager_server_instaler
+OutputDir=.\
+OutputBaseFilename="windows_audio_manager_server_instaler"
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
