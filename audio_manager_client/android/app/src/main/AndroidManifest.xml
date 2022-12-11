@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.audio_manager_client">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="audio_manager_client"
+        android:label="Windows Audio Manager"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

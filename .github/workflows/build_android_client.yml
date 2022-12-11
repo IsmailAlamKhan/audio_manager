@@ -1,0 +1,44 @@
+name: Build Android Client
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: "Version"
+        required: true
+        default: "0.0.0"
+        type: string
+      release-upload-url:
+        description: "Release upload URL"
+        required: true
+        type: string
+      app-name:
+        description: "Application name"
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_PATH: audio_manager_client/build/app/outputs/flutter-apk
+      APPNAME: ${{ inputs.app-name }}
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Install and set Flutter version
+        uses: subosito/flutter-action@v2.4.0
+
+      - name: Build Android app
+        run: flutter build apk --release
+
+      - name: upload apk to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_path: ${{ env.RELEASE_PATH }}/app-release.apk
+          asset_name: ${{ env.APPNAME }}-android.apk
+          asset_content_type: application/vnd.android.package-archive
+          upload_url: ${{ inputs.release-upload-url }}

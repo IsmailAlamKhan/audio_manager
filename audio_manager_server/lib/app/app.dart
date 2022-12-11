@@ -18,7 +18,7 @@ class App {
       // backgroundColor: Colors.transparent,
       skipTaskbar: false,
       titleBarStyle: TitleBarStyle.normal,
-      title: 'Audio Manager',
+      title: 'Windows Audio Manager',
     );
     windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.show();
