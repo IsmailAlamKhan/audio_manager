@@ -38,5 +38,14 @@ jobs:
     secrets: inherit
     with:
       release-upload-url: ${{ needs.create-release.outputs.release }}
-      app-name: "windows-audio-manager"
+      app-name: "windows-audio-manager-server"
+      version: ${{ github.ref }}
+
+  build-client:
+    needs: [create-release]
+    uses: ./.github/workflows/build_client.yml
+    secrets: inherit
+    with:
+      release-upload-url: ${{ needs.create-release.outputs.release }}
+      app-name: "windows-audio-manager-client"
       version: ${{ github.ref }}
