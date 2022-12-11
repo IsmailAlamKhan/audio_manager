@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ inputs.release-upload-url }}
-          asset_path: Installers/${{env.APPNAME}}-setup-windows.exe
+          asset_path: ../installers/${{env.APPNAME}}-setup-windows.exe
           asset_name: ${{env.APPNAME}}-setup-windows.exe
           asset_content_type: application/x-msdownload
 

@@ -21,7 +21,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=.\
-OutputBaseFilename="windows_audio_manager_server_instaler"
+OutputBaseFilename="windows-audio-manager-server-setup-windows"
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
