@@ -23,7 +23,7 @@ jobs:
       run:
         working-directory: ./audio_manager_client
     env:
-      RELEASE_PATH: build/app/outputs/flutter-apk
+      RELEASE_PATH: audio_manager_client/build/app/outputs/flutter-apk
       APPNAME: ${{ inputs.app-name }}
       VERSION: ${{ inputs.version }}
     steps:

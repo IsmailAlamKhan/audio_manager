@@ -23,7 +23,7 @@ jobs:
       run:
         working-directory: ./audio_manager_server
     env:
-      RELEASE_PATH: build/windows/runner/Release
+      RELEASE_PATH: audio_manager_server/build/windows/runner/Release
       APPNAME: ${{ inputs.app-name }}
       VERSION: ${{ inputs.version }}
     steps:
@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ inputs.release-upload-url }}
-          asset_path: ../installers/${{env.APPNAME}}-setup-windows.exe
+          asset_path: installers/${{env.APPNAME}}-setup-windows.exe
           asset_name: ${{env.APPNAME}}-setup-windows.exe
           asset_content_type: application/x-msdownload
 
